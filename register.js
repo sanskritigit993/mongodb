@@ -16,7 +16,4 @@ const userData = new mongoose.Schema({
 });
 
 const Register = mongoose.model("userData", userData);
-module.exports = Register;try {
-    console.log(exported)
-}(e)
-
+module.exports = Register;
