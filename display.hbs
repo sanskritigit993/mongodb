@@ -1,0 +1,49 @@
+<html>
+
+<title>
+
+</title>
+
+<body>
+
+{{# if status}}
+<script>
+    const status={{status}}
+    if(status==1){
+        alert("Data Updated ")
+    }
+    if(status==2){
+        alert("Data Deleted")
+    }
+
+</script>
+{{/if}}
+
+
+
+<table border="2px">
+    <tr>
+        <td>NAME</td>
+        <td></td>
+        <td></td>
+    </tr>
+    {{#each data}}
+    <form method="post" action="/update">
+        <tr>
+            <input name="id" hidden type="text" value="{{this._id}}">
+            <td>
+                <input type="text" name="name" value="{{this.name}}">
+            </td>
+            <td>
+                <input name="btn" type="submit" value="UPDATE">
+            </td>
+            <td>
+                <input name="btn" type="submit" value="DELETE">
+            </td>
+        </tr>
+    </form>
+    {{/each}}
+</table>
+
+</body>
+</html>
